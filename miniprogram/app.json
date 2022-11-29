@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/person/person",
+    "pages/identify/identify",
+    "pages/present/present",
+    "pages/timetable/timetable",
+    "pages/record/record",
+    "pages/reserve/reserve",
+    "pages/whereiskey/whereiskey"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "position": "bottom",
+    "color": "black",
+    "list": [
+      {
+        "pagePath": "pages/person/person",
+        "text": "个人",
+        "iconPath": "pages/img/个人 (1).png",
+        "selectedIconPath": "pages/img/个人 (-1.png"
+      },
+      {
+        "pagePath": "pages/present/present",
+        "text": "当前",
+        "iconPath": "pages/img/预约-1.png",
+        "selectedIconPath": "pages/img/预约.png"
+      },
+      {
+        "pagePath": "pages/timetable/timetable",
+        "text": "时间表",
+        "iconPath": "pages/img/日程表1.png",
+        "selectedIconPath": "pages/img/日程表.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
