@@ -1,0 +1,34 @@
+/* pages/reserve/reserve.wxss */
+.contain{
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+  align-items: flex-end;
+flex-direction: column;
+  font-size: 60rpx;
+  /* border: black;
+  border-style: solid; */
+  height: 1000rpx;
+  width: 50%;
+}
+.box{
+display: flex;
+
+}
+.top{
+  display: flex;
+  font-size: 60rpx;
+  justify-content: center;
+}
+.input{
+  position: relative;
+  top: 30rpx;
+  font-size: 60rpx;
+  height: 60rpx;
+  border-bottom:  #ECECEC;
+  border-bottom-style: solid; 
+}
+#contain{
+  height: 1040rpx;
+  justify-content: space-around;
+}

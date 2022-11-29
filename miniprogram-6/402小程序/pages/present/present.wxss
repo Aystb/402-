@@ -1,0 +1,40 @@
+/* pages/present/present.wxss */
+.img {
+
+  width: 150rpx;
+  height: 130rpx;
+}
+
+.using {
+  font-size: 160rpx;
+  color: #07C160;
+  font-family: serif;
+}
+
+.contain {
+ 
+  height:1000rpx;
+  flex-direction: column;
+  position: relative;
+  top: 170rpx;
+   /* border: black;
+  border-style: solid;  */
+  display: flex;
+  align-items: center;
+}
+.reserve{
+  color: #FFFFFF;
+  top: 60rpx;
+  font-size:90rpx;
+  font-family: cursive;
+  background: linear-gradient(180deg, #2EB7F2 0%, #35BAF2 0%, #51C4F4 19%, #76D0F6 45%, #F0FBFF 131%);
+  border-radius: 40rpx;
+}
+.whereiskey{
+
+  align-self: flex-end;
+  font-size: 50rpx;
+  position: relative;
+top: 250rpx;
+  color: #31A6D9;
+}

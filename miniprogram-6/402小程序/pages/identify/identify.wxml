@@ -1,0 +1,13 @@
+
+
+<view class="contain">
+  <view>请输入姓名</view>
+  <input type="text" class="name" bindinput="username" />
+  <view>请输入密码</view>
+  <input type="text" class="password" bindinput="password" />
+  <view>请输入所属部门</view>
+  <input type="text" class="bumen" bindinput="bumen" />
+  <view>请输入所任职务</view>
+  <input type="text" class="position" bindinput="position" />
+  <button class="btn" type="primary" bindtap="submit">提交 </button>
+</view>
