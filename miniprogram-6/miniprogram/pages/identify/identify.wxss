@@ -1,5 +1,0 @@
-/* pages/identify/identify.wxss */
-.contain {
-
-  font-size: 50rpx;
-}
