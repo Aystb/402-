@@ -1,6 +1,0 @@
-<!--pages/timetable/timetable.wxml-->
-<text>pages/timetable/timetable.wxml</text>
-<view class="container">
-  <view class="thisWeek">本周</view>
-  <view class="nextWeek">下周</view>
-</view>
