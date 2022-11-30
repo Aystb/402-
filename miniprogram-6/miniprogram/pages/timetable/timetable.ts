@@ -4,8 +4,12 @@ Page({
   /**
    * 页面的初始数据
    */
-
   data: {
+    datas: [{
+      group: "",
+      starttime: "",
+      endtime: ""
+    }],
     flagWeek: 0,
     thisweek: ["thisWeek", "thisWeekOff"],
     nextweek: ["nextWeek", "nextWeekOn"],
@@ -135,6 +139,68 @@ Page({
       flagWeek: 0,
     })
   },
+  loadFontFace() {
+    wx.loadFontFace({
+      family: 'REEJI-ZhenyanGB-Regular',
+      source: 'url("https://raw.githubusercontent.com/Aystb/402-/ttf/RuiZiChaoPaiZhenYan2.0Jian.ttf")',
+      success(res) {
+        console.log(res.status)
+      },
+      fail: function (res) {
+        console.log(res.status)
+      },
+      complete: function (res) {
+        console.log(res.status)
+      }
+    });
+    wx.loadFontFace({
+      family: 'REEJI-FlashItalicGB-Flash-Regular',
+      source: 'url("https://raw.githubusercontent.com/Aystb/402-/ttf/RuiZiChaoPaiChiGuangHei-Shan-ChangGui(REEJI-FlashItalicGB-Flash-Regular)-2.ttf")',
+      success(res) {
+        console.log(res.status)
+      },
+      fail: function (res) {
+        console.log(res.status)
+      },
+      complete: function (res) {
+        console.log(res.status)
+      }
+    });
+  },
+  changeSelected() {
+    if (typeof this.getTabBar === 'function' && this.getTabBar()) {
+      this.getTabBar().setData({
+        selected: 0
+      })
+    }
+  },
+  Get() {
+    wx.request({
+      url: 'http://127.0.0.1:8000/users/records',
+      method: 'GET',
+      //记得拿回id
+      success: (res) => {
+        const results = {
+          group: res.data.group,
+          starttime: res.data.starttime,
+          endtime: res.data.endtime
+        }
+        this.setData({
+
+          //从后端拿数据时找不到数据是正常的，这里的报错其实没有问题
+          datas: this.data.datas.concat(results)
+        })
+      },
+    })
+  },
+
+  times() {
+    for (let data of this.data.datas) {
+      if (data != app.globalData.group) {
+      }
+    }
+  },
+
   //点击切换到预约页面
   // toReserve() {
   //   wx.navigateTo({ url: "/pages/reserve/reserve" })
@@ -144,7 +210,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad() {
-
+    this.loadFontFace(),
+      this.changeSelected(),
+      this.Get(),
+      this.times()
   },
 
   /**
@@ -158,11 +227,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-    if (typeof this.getTabBar === 'function' && this.getTabBar()) {
-      this.getTabBar().setData({
-        selected: 0
-      })
-    }
+
   },
 
   /**

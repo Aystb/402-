@@ -77,12 +77,12 @@
   padding: 0;
   padding-left: 6rpx;
   padding-right: 18rpx;
-  padding-top: -4rpx;
+  padding-top: 14rpx;
   padding-bottom: 44rpx;
 
   position: absolute;
   left: 20rpx;
-  top: 194rpx;
+  top: 176rpx;
   width: 724rpx;
   height: 1040rpx;
   opacity: 1;
@@ -98,7 +98,7 @@
 }
 
 .weeks {
-  font-family: REEJI-ZhenyanGB2.0-Regular;
+  font-family: REEJI-ZhenyanGB-Regular;
   font-size: 32rpx;
   font-weight: normal;
   line-height: 64rpx;
@@ -115,7 +115,6 @@
 }
 
 .timeTable {
-  font-family: REEJI-ZhenyanGB2.0-Regular;
   font-size: 24rpx;
   font-weight: normal;
   line-height: 32rpx;
@@ -125,7 +124,7 @@
   height: 64rpx;
   border-radius: 4rpx;
   opacity: 1;
-
+  font-family: REEJI-ZhenyanGB-Regular;
   background: #ECECEC;
 }
 
