@@ -3,9 +3,6 @@
   "miniprogramRoot": "miniprogram/",
   "compileType": "miniprogram",
   "setting": {
-    "useCompilerPlugins": [
-      "typescript"
-    ],
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
