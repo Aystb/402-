@@ -10,10 +10,10 @@
 
 <!-- 部门，职位，预约记录部分 -->
 <view class="bottom">
-  <view class="bumen"> 部门</view>
-  <view class="bumeninput">{{bumen}}</view>
+  <view class="group"> 部门</view>
+  <view class="groupinput">{{group}}</view>
 
-  <view class="position"> 职位 </view>
-  <view class="positioninput">{{position}}</view>
+  <view class="job"> 职位 </view>
+  <view class="jobinput">{{job}}</view>
   <navigator class="record" bindtap="record">预约记录</navigator>
 </view>

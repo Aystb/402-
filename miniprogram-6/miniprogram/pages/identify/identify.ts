@@ -6,8 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    bumen: "bm",
-    position: "职位",
+    group: "bm",
+    job: "职位",
     username: "姓名",
     password: "123456",
     id: "123456"
@@ -23,24 +23,25 @@ Page({
       data: {
         username: this.data.username,
         password: this.data.password,
-        bumen: this.data.bumen,
-        position: this.data.position,
+        group: this.data.group,
+        job: this.data.job,
       },
       //记得拿回id
       success: (res) => {
+        console.log(res)
         this.setData({
           //从后端拿数据时找不到数据是正常的，这里的报错其实没有问题
           username: res.data.username,
           password: res.data.password,
-          bumen: res.data.bumen,
-          position: res.data.position,
+          group: res.data.group,
+          job: res.data.job,
           id: res.data.id
         })
 
         app.globalData.username = this.data.username,
           app.globalData.password = this.data.password,
-          app.globalData.bumen = this.data.bumen,
-          app.globalData.position = this.data.position,
+          app.globalData.group = this.data.group,
+          app.globalData.job = this.data.job,
           app.globalData.id = this.data.id,
           app.globalData.style = "width: 220rpx; background:linear-gradient(180deg, #A1FFE3 0%, rgba(91,255,169,0.88) 0%, #B7ECFF 131%, #57FFDD 131%);",
           app.globalData.identification = "已认证"
@@ -68,11 +69,11 @@ Page({
   password: function (e: { detail: { value: any } }) {
     this.setData({ password: e.detail.value })
   },
-  bumen: function (e: { detail: { value: any } }) {
-    this.setData({ bumen: e.detail.value })
+  group: function (e: { detail: { value: any } }) {
+    this.setData({ group: e.detail.value })
   },
-  position: function (e: { detail: { value: any } }) {
-    this.setData({ position: e.detail.value })
+  job: function (e: { detail: { value: any } }) {
+    this.setData({ job: e.detail.value })
   },
 
 

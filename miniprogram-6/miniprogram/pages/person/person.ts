@@ -8,8 +8,8 @@ Page({
   data: {
     style: "width: 244rpx; font-size:36rpx; background: linear-gradient(180deg, #2EB7F2 0%, #35BAF2 0%, #F0FBFF 131%);",
     identification: "前往认证",
-    bumen: "",
-    position: "",
+    group: "",
+    job: "",
     username: "姓名",
     password: "123456",
     id: "1"
@@ -48,15 +48,15 @@ Page({
         selected: 2
       })
     }
-    // this.setData({
-    //   username: app.globalData.username,
-    //   password: app.globalData.password,
-    //   bumen: app.globalData.bumen,
-    //   position: app.globalData.position,
-    //   id: app.globalData.id,
-    //   style: app.globalData.style,
-    //   identification: app.globalData.identification,
-    // })
+   this.setData({
+     username: app.globalData.username,
+      password: app.globalData.password,
+      group: app.globalData.group,
+      job: app.globalData.job,
+      id: app.globalData.id,
+      style: app.globalData.style,
+     identification: app.globalData.identification,
+     })
 
 
   },

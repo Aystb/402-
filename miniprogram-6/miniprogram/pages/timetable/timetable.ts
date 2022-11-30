@@ -1,4 +1,5 @@
 // pages/timetable/timetable.ts
+var app = getApp();
 Page({
 
   /**
@@ -174,25 +175,27 @@ Page({
       })
     }
   },
-  Get() {
-    wx.request({
-      url: 'http://127.0.0.1:8000/users/records',
-      method: 'GET',
-      //记得拿回id
-      success: (res) => {
-        const results = {
-          group: res.data.group,
-          starttime: res.data.starttime,
-          endtime: res.data.endtime
-        }
-        this.setData({
 
-          //从后端拿数据时找不到数据是正常的，这里的报错其实没有问题
-          datas: this.data.datas.concat(results)
-        })
-      },
-    })
-  },
+  //暂时注释掉,后续再恢复
+  // Get() {
+  //   wx.request({
+  //     url: 'http://127.0.0.1:8000/users/records',
+  //     method: 'GET',
+  //     //记得拿回id
+  //     success: (res) => {
+  //       const results = {
+  //         group: res.data.group,
+  //         starttime: res.data.starttime,
+  //         endtime: res.data.endtime
+  //       }
+  //       this.setData({
+
+  //         //从后端拿数据时找不到数据是正常的，这里的报错其实没有问题
+  //         datas: this.data.datas.concat(results)
+  //       })
+  //     },
+  //   })
+  // },
 
   times() {
     for (let data of this.data.datas) {

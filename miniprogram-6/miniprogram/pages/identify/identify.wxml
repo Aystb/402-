@@ -6,8 +6,8 @@
   <view>请输入密码</view>
   <input type="text" class="password" bindinput="password" />
   <view>请输入所属部门</view>
-  <input type="text" class="bumen" bindinput="bumen" />
+  <input type="text" class="group" bindinput="group" />
   <view>请输入所任职务</view>
-  <input type="text" class="position" bindinput="position" />
+  <input type="text" class="job" bindinput="job" />
   <button class="btn" type="primary" bindtap="submit">提交 </button>
 </view>

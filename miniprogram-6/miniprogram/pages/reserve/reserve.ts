@@ -7,29 +7,29 @@ Page({
   data: {
     
     reserveData: "",
-    beginTime: "",
-    overTime: "",
-    reserveDiscribe:"",
+    starttime: "",
+    endtime: "",
+    text:"",
   },
   
   reserveData(e: { detail: { value: any } }) {
     this.setData({ reserveData: e.detail.value })
   },
-  beginTime(e: { detail: { value: any } }) {
-    this.setData({ beginTime: e.detail.value })
+  starttime(e: { detail: { value: any } }) {
+    this.setData({ starttime: e.detail.value })
   },
-  overTime(e: { detail: { value: any } }) {
-    this.setData({  overTime: e.detail.value })
+  endtime(e: { detail: { value: any } }) {
+    this.setData({  endtime: e.detail.value })
   },
-  reserveDiscribe(e: { detail: { value: any } }) {
-    this.setData({ reserveDiscribe: e.detail.value })
+  text(e: { detail: { value: any } }) {
+    this.setData({ text: e.detail.value })
   },
   submit(){
    
     app.globalData.reserveData=this.data.reserveData,
-    app.globalData.beginTime=this.data.beginTime,
-    app.globalData.overTime=this.data.overTime,
-    app.globalData.reserveDiscribe=this.data.reserveDiscribe
+    app.globalData.starttime=this.data.starttime,
+    app.globalData.endtime=this.data.endtime,
+    app.globalData.text=this.data.text
 
 
 
