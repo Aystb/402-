@@ -136,3 +136,21 @@
 
   background: #F0F0F0;
 }
+
+.onSelected {
+  width: 78rpx;
+  height: 64rpx;
+  border-radius: 12rpx;
+  opacity: 1;
+
+  background: #B2DFF9;
+}
+
+.otherSelected {
+  width: 78rpx;
+  height: 64rpx;
+  border-radius: 12rpx;
+  opacity: 1;
+
+  background: #FFC4C4;
+}

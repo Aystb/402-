@@ -1,11 +1,11 @@
 // pages/timetable/timetable.ts
-var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    months: [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
     datas: [{
       group: "",
       starttime: "",
@@ -175,31 +175,50 @@ Page({
       })
     }
   },
-
-  //暂时注释掉,后续再恢复
-  // Get() {
-  //   wx.request({
-  //     url: 'http://127.0.0.1:8000/users/records',
-  //     method: 'GET',
-  //     //记得拿回id
-  //     success: (res) => {
-  //       const results = {
-  //         group: res.data.group,
-  //         starttime: res.data.starttime,
-  //         endtime: res.data.endtime
-  //       }
-  //       this.setData({
-
-  //         //从后端拿数据时找不到数据是正常的，这里的报错其实没有问题
-  //         datas: this.data.datas.concat(results)
-  //       })
-  //     },
-  //   })
-  // },
+  Get() {
+    wx.request({
+      url: 'http://127.0.0.1:8000/users/records',
+      method: 'GET',
+      success: (res) => {
+        const results = {
+          group: res.data.group,
+          starttime: res.data.starttime,
+          endtime: res.data.endtime
+        }
+        this.setData({
+          datas: this.data.datas.concat(results)
+        })
+      },
+    })
+  },
 
   times() {
+    const time = new Date();
+    const today = time.getDate();
+    const currentMonth = time.getMonth() + 1;
+    console.log(today);
+    console.log(currentMonth);
+    const weekNumber = time.getDay();
+    console.log("weekNumber:" + weekNumber);
+    const firstDay = today - weekNumber + this.data.flagWeek * 7;
+    const lastDay = firstDay + 6;
     for (let data of this.data.datas) {
-      if (data != app.globalData.group) {
+      const thisTime = new Date(data.starttime);
+      const thisMonth = thisTime.getMonth() + 1;
+      const thisDay = thisTime.getDate() + (thisMonth - currentMonth) * this.data.months[currentMonth];
+      const thisWeekNumber = thisTime.getDay();
+      if (thisDay >= firstDay && thisDay <= lastDay) {
+        const thisHour = thisTime.getHours();
+        const timeNumber = (thisHour - 7) * 8 + thisWeekNumber;
+        if (data.group != app.globalData.group) {
+          this.setData({
+            ['list[' + timeNumber + '].className']: "otherSelected"
+          })
+        } else {
+          this.setData({
+            ['list[' + timeNumber + '].className']: "onSelected"
+          })
+        }
       }
     }
   },
