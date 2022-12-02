@@ -1,0 +1,11 @@
+<!--component/item/select.wxml-->
+
+<view class='select-box'>
+    <view class='select-con' bindtap='selectTap'>
+        <view class='select-txt'>{{nowText}}</view>
+        <text class="font a-xiangxia1x select-img" animation="{{animationData}}"></text>
+    </view>
+    <view class='select-list' wx:if="{{selectShow}}">
+        <view wx:for="{{selectArray}}" data-index="{{index}}" wx:key='item' class='select-item' bindtap='setText'>{{item.text}}</view>
+    </view>
+</view>

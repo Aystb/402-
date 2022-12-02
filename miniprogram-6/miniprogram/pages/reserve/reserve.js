@@ -1,4 +1,5 @@
 // pages/reserve/reserve.ts
+var app = getApp();
 Page({
   /**
    * 页面的初始数据
@@ -8,25 +9,76 @@ Page({
     starttime: '',
     endtime: '',
     text: '',
+    memberTypeArray: [{
+
+      "text": "例会"
+    }, {
+
+      "text": "活动"
+    }, {
+
+      "text": "其他"
+    }],
+    choice: "例会",
+
+  },
+
+  getSelect: function (e) {
+    let that = this;
+    let value = e.detail.text; //value就是选择后的文字
+    this.setData({
+      choice: e.detail.text
+    })
+
   },
 
   reserveData(e) {
-    this.setData({ reserveData: e.detail.value });
+    this.setData({
+      reserveData: e.detail.value
+    });
   },
   starttime(e) {
-    this.setData({ starttime: e.detail.value });
+    this.setData({
+      starttime: e.detail.value
+    });
   },
   endtime(e) {
-    this.setData({ endtime: e.detail.value });
+    this.setData({
+      endtime: e.detail.value
+    });
   },
   text(e) {
-    this.setData({ text: e.detail.value });
+    this.setData({
+      text: e.detail.value
+    });
   },
   submit() {
-    (app.globalData.reserveData = this.data.reserveData),
-      (app.globalData.starttime = this.data.starttime),
-      (app.globalData.endtime = this.data.endtime),
-      (app.globalData.text = this.data.text);
+    app.globalData.reserveData = this.data.reserveData,
+    app.globalData.starttime = this.data.starttime,
+    app.globalData.endtime = this.data.endtime,
+    app.globalData.text = this.data.text,
+    app.globalData.choice = this.data.choice
+    //向后端传输预约信息
+    wx.request({
+      url: 'http://127.0.0.1:8000/api/1.0/users/1/records',
+      method : "POST",
+      data: {
+        id: app.globalData.id,
+        starttime: this.data.reserveData + this.data.starttime,
+        endtime: this.data.reserveData + this.data.endtime,
+        choice: this.data.choice,
+        text: this.data.text,
+
+      },
+      success: (res) => {
+        console.log(res.data)
+
+      }
+    })
+
+
+
+
   },
 
   /**
