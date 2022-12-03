@@ -12,29 +12,81 @@
 }
 
 .contain {
- 
-  height:1000rpx;
+
+  height: 1000rpx;
   flex-direction: column;
   position: relative;
   top: 170rpx;
-   /* border: black;
+  /* border: black;
   border-style: solid;  */
   display: flex;
   align-items: center;
 }
-.reserve{
+
+.reserve {
   color: #FFFFFF;
   top: 60rpx;
-  font-size:90rpx;
+  font-size: 90rpx;
   font-family: cursive;
   background: linear-gradient(180deg, #2EB7F2 0%, #35BAF2 0%, #51C4F4 19%, #76D0F6 45%, #F0FBFF 131%);
   border-radius: 40rpx;
 }
-.whereiskey{
+
+.whereiskey {
 
   align-self: flex-end;
   font-size: 50rpx;
   position: relative;
-top: 250rpx;
+  top: 250rpx;
   color: #31A6D9;
+}
+
+.btncontainer {
+ 
+  display: flex;
+
+}
+
+.cancel {
+  border-radius: 20rpx;
+  font-family: serif;
+  font-size: 50rpx;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.confirm {
+  border-radius: 20rpx;
+  font-family: serif;
+  font-size: 50rpx;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.key {
+  border: black  5rpx;
+  border-radius: 30rpx;
+  border-style: solid;
+  display: flex;
+  justify-content: space-between;
+ align-items: center;
+  flex-direction: column;
+  background-color:white;
+  position: relative;
+  top: -200rpx;
+  height: 400rpx;
+}
+.keytext{
+  position: relative;
+  font-size: 40rpx;
+  top: 50rpx
+}
+.keyinput{
+  font-size: 60rpx;
+  width: 600rpx;
+  height: 60rpx;
+  border:#ECECEC  5rpx;
+  border-bottom-style: solid;
 }

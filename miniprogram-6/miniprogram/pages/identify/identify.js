@@ -37,29 +37,37 @@ Page({
         });
 
         (app.globalData.username = this.data.username),
-          (app.globalData.password = this.data.password),
-          (app.globalData.group = this.data.group),
-          (app.globalData.job = this.data.job),
-          (app.globalData.id = this.data.id),
-          (app.globalData.style =
-            'width: 220rpx; background:linear-gradient(180deg, #A1FFE3 0%, rgba(91,255,169,0.88) 0%, #B7ECFF 131%, #57FFDD 131%);'),
-          (app.globalData.identification = '已认证');
+        (app.globalData.password = this.data.password),
+        (app.globalData.group = this.data.group),
+        (app.globalData.job = this.data.job),
+        (app.globalData.id = this.data.id),
+        (app.globalData.style =
+          'width: 220rpx; background:linear-gradient(180deg, #A1FFE3 0%, rgba(91,255,169,0.88) 0%, #B7ECFF 131%, #57FFDD 131%);'),
+        (app.globalData.identification = '已认证');
       },
     });
   },
 
   //根据input输入框的内容修改globalData的值
   username: function (e) {
-    this.setData({ username: e.detail.value });
+    this.setData({
+      username: e.detail.value
+    });
   },
   password: function (e) {
-    this.setData({ password: e.detail.value });
+    this.setData({
+      password: e.detail.value
+    });
   },
   group: function (e) {
-    this.setData({ group: e.detail.value });
+    this.setData({
+      group: e.detail.value
+    });
   },
   job: function (e) {
-    this.setData({ job: e.detail.value });
+    this.setData({
+      job: e.detail.value
+    });
   },
 
   /**

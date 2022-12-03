@@ -10,12 +10,55 @@ Page({
     group: '',
     using: '空闲',
     reserve: '预约',
-    whereiskey: '钥匙在哪儿？',
+    whereiskeytext: '钥匙在哪儿？',
+    key:true,
+    antikey:false,
+    whereiskey:'未填写',
   },
 
   reserve() {
     wx.navigateTo({ url: '/pages/reserve/reserve' });
   },
+
+  whereiskey(){
+    this.setData({
+      key:false,
+      antikey:true,
+    })
+
+  },
+
+
+
+keyinput(e){
+this.setData({
+  whereiskey:e.detail.value,
+})
+
+
+},
+
+confirm(){
+//此处的请求在api完成后再写
+
+app.globalData.whereiskey=this.data.whereiskey;
+this.setData({
+  key:true,
+  antikey:false,
+})
+
+},
+
+cancel(){
+
+  this.setData({
+    key:true,
+    antikey:false,
+    whereiskey:'',
+  })
+
+},
+
 
   /**
    * 生命周期函数--监听页面加载

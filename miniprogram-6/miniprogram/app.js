@@ -13,6 +13,7 @@ App({
     starttime: "",
     endtime: "",
     text: "",
+    whereiskey:" ",
   },
   loadFontFace() {
     wx.loadFontFace({
