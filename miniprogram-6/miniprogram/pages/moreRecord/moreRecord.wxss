@@ -1,28 +1,12 @@
+/* pages/moreRecord/moreRecord.wxss */
 /* pages/record/record.wxss */
-.moreRecord {
-  position: absolute;
-  left: 500rpx;
-  top: 56rpx;
-  width: 192rpx;
-  height: 48rpx;
-  opacity: 1;
-
-  font-family: REEJI-FlashItalicGB-Flash-Regular;
-  font-size: 48rpx;
-  font-weight: normal;
-  line-height: 48rpx;
-  letter-spacing: 0em;
-
-  color: #3FBDF2;
-
-}
 
 .container {
   margin: 0;
   padding: 0;
   position: absolute;
   left: 48rpx;
-  top: 136rpx;
+  top: 92rpx;
   width: 654rpx;
   height: auto;
   opacity: 1;
@@ -30,13 +14,15 @@
 
 .main {
   position: relative;
-  margin-bottom: 56rpx;
   width: 654rpx;
-  height: 698rpx;
+  height: 502rpx;
   border-radius: 10rpx;
   opacity: 1;
+  padding: 0%;
+  margin: 0%;
+  margin-bottom: 56rpx;
 
-  background: #FFFFFF;
+  background: #ffffff;
 
   box-sizing: border-box;
   border: 2rpx solid #E4E4E4;
@@ -47,7 +33,7 @@
 
   position: absolute;
   left: 184rpx;
-  top: 60rpx;
+  top: 43.16rpx;
   width: 288rpx;
   height: 96rpx;
   opacity: 1;
@@ -58,14 +44,13 @@
   line-height: 96rpx;
   letter-spacing: 0em;
 
-  color: #DB2139;
-
+  color: #07C160;
 }
 
 .day {
   position: absolute;
   left: 132rpx;
-  top: 228rpx;
+  top: 164rpx;
   width: 400rpx;
   height: 72rpx;
   opacity: 1;
@@ -83,7 +68,7 @@
 .hour {
   position: absolute;
   left: 126rpx;
-  top: 346rpx;
+  top: 249rpx;
   width: 408rpx;
   height: 72rpx;
   opacity: 1;
@@ -103,15 +88,15 @@
 
   position: absolute;
   left: 104rpx;
-  top: 462rpx;
+  top: 352rpx;
   width: 450rpx;
   height: 128rpx;
   opacity: 1;
   text-align: center;
   font-family: REEJI-FlashItalicGB-Flash-Regular;
-  font-size: 64rpx;
+  font-size: 48rpx;
   font-weight: normal;
-  line-height: 64rpx;
+  line-height: 48rpx;
   letter-spacing: 0em;
   color: #3FBDF2;
 }

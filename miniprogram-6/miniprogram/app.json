@@ -5,8 +5,8 @@
     "pages/present/present",
     "pages/timetable/timetable",
     "pages/record/record",
-    "pages/reserve/reserve"
-    
+    "pages/reserve/reserve",
+    "pages/moreRecord/moreRecord"
   ],
   "window": {
     "backgroundTextStyle": "light",

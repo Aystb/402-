@@ -7,11 +7,6 @@ Page({
    */
   data: {
     months: [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
-    datas: [{
-      group: "",
-      starttime: "",
-      endtime: ""
-    }],
     flagWeek: 0,
     thisweek: ["thisWeek", "thisWeekOff"],
     nextweek: ["nextWeek", "nextWeekOn"],
@@ -466,12 +461,59 @@ Page({
     }],
 
   },
+
+  Get() {
+    wx.request({
+      url: 'http://127.0.0.1:8000/users/records',
+      method: 'GET',
+      success: (res) => {
+        const time = new Date();
+        const today = time.getDate();
+        const currentMonth = time.getMonth() + 1;
+        console.log(today);
+        console.log(currentMonth);
+        const weekNumber = time.getDay();
+        console.log("weekNumber:" + weekNumber);
+        const firstDay = today - weekNumber + this.data.flagWeek * 7;
+        const lastDay = firstDay + 6;
+        for (let data of res.data) {
+          const thisTime = new Date(data.starttime);
+          const thisEndTime = new Data(data.endtime);
+          const thisMonth = thisTime.getMonth() + 1;
+          const thisDay = thisTime.getDate() + (thisMonth - currentMonth) * this.data.months[currentMonth];
+          const thisWeekNumber = thisTime.getDay();
+          if (thisDay >= firstDay && thisDay <= lastDay) {
+            const thisHour = thisTime.getHours();
+            const thisEndHour = thisEndTime.getHours();
+            if (data.group != app.globalData.group) {
+              for (let i = 0; i <= thisEndHour - thisHour - 1; i++) {
+                const timeNumber = (thisHour + i - 7) * 8 + thisWeekNumber;
+                this.setData({
+                  ['list[' + timeNumber + '].className']: "otherSelected"
+                })
+              }
+            } else {
+              for (let i = 0; i <= thisEndHour - thisHour - 1; i++) {
+                const timeNumber = (thisHour + i - 7) * 8 + thisWeekNumber;
+                this.setData({
+                  ['list[' + timeNumber + '].className']: "onSelected"
+                })
+              }
+            }
+          }
+        }
+      },
+    })
+  },
+
   changeon() {
+    //Get();
     this.setData({
       flagWeek: 1,
     })
   },
   changeoff() {
+    //Get();
     this.setData({
       flagWeek: 0,
     })
@@ -511,53 +553,8 @@ Page({
       })
     }
   },
-  Get() {
-    wx.request({
-      url: 'http://127.0.0.1:8000/users/records',
-      method: 'GET',
-      success: (res) => {
-        const results = {
-          group: res.data.group,
-          starttime: res.data.starttime,
-          endtime: res.data.endtime
-        }
-        this.setData({
-          datas: this.data.datas.concat(results)
-        })
-      },
-    })
-  },
 
-  times() {
-    const time = new Date();
-    const today = time.getDate();
-    const currentMonth = time.getMonth() + 1;
-    console.log(today);
-    console.log(currentMonth);
-    const weekNumber = time.getDay();
-    console.log("weekNumber:" + weekNumber);
-    const firstDay = today - weekNumber + this.data.flagWeek * 7;
-    const lastDay = firstDay + 6;
-    for (let data of this.data.datas) {
-      const thisTime = new Date(data.starttime);
-      const thisMonth = thisTime.getMonth() + 1;
-      const thisDay = thisTime.getDate() + (thisMonth - currentMonth) * this.data.months[currentMonth];
-      const thisWeekNumber = thisTime.getDay();
-      if (thisDay >= firstDay && thisDay <= lastDay) {
-        const thisHour = thisTime.getHours();
-        const timeNumber = (thisHour - 7) * 8 + thisWeekNumber;
-        if (data.group != app.globalData.group) {
-          this.setData({
-            ['list[' + timeNumber + '].className']: "otherSelected"
-          })
-        } else {
-          this.setData({
-            ['list[' + timeNumber + '].className']: "onSelected"
-          })
-        }
-      }
-    }
-  },
+
 
   //点击切换到预约页面
   // toReserve() {
@@ -570,8 +567,7 @@ Page({
   onLoad() {
     this.loadFontFace(),
       this.changeSelected(),
-      this.Get(),
-      this.times()
+      this.Get()
   },
 
   /**

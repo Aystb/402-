@@ -1,2 +1,10 @@
 <!--预约记录页面pages/record/record.wxml-->
-<text>pages/record/record.wxml</text>
+<text class="moreRecord" bindtap="moreRecord">历史记录</text>
+<view class="container">
+  <view wx:for="{{list}}" wx:key="list" class="main">
+    <view class="header">待完成</view>
+    <view class="day">{{item.day}}</view>
+    <view class="hour">{{item.hour}}</view>
+    <view class="description">{{item.text}}</view>
+  </view>
+</view>

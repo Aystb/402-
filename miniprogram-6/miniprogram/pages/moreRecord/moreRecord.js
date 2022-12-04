@@ -1,6 +1,6 @@
-// pages/record/record.ts
-const app = getApp();
+// pages/moreRecord/moreRecord.js
 Page({
+
   /**
    * 页面的初始数据
    */
@@ -9,13 +9,13 @@ Page({
       day: "2022-12-10",
       hour: "10:00-11:00",
       text: "此处为预约理由"
-    },{
+    }, {
       day: "2022-12-10",
       hour: "10:00-11:00",
       text: "此处为预约理由"
     }]
-  },
 
+  },
   loadFontFace() {
     wx.loadFontFace({
       family: 'REEJI-FlashItalicGB-Flash-Regular',
@@ -56,8 +56,7 @@ Page({
           const thisYear = thisStartTime.getFullYear();
           var d1 = new Date(time.replace(/\-/g, "\/"));
           var d2 = new Date(thisEndTime.replace(/\-/g, "\/"));
-
-          if (d1 < d2 && currentHour < thisEndHour) {
+          if (d1 >= d2 && currentHour >= thisEndHour) {
             const thisTime = {
               day: thisYear + "-" + thisMonth + "-" + thisDay,
               hour: thisStartHour + ":00-" + thisEndHour + ":00",
@@ -74,49 +73,57 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-
-  moreRecord() {
-    wx.navigateTo({
-      url: '/pages/moreRecord/moreRecord'
-    });
-  },
-  onLoad() {
-    this.loadFontFace();
+  onLoad(options) {
+    this.loadFontFace()
     this.Get()
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady() {},
+  onReady() {
+
+  },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow() {},
+  onShow() {
+
+  },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide() {},
+  onHide() {
+
+  },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload() {},
+  onUnload() {
+
+  },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh() {},
+  onPullDownRefresh() {
+
+  },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom() {},
+  onReachBottom() {
+
+  },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage() {},
-});
+  onShareAppMessage() {
+
+  }
+})

@@ -1,0 +1,9 @@
+<!--pages/moreRecord/moreRecord.wxml-->
+<view class="container">
+  <view wx:for="{{list}}" wx:key="list" class="main">
+    <view class="header">已完成</view>
+    <view class="day">{{item.day}}</view>
+    <view class="hour">{{item.hour}}</view>
+    <view class="description">{{item.text}}</view>
+  </view>
+</view>

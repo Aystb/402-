@@ -2,7 +2,7 @@
 <view wx:if="flagWeek" class="{{thisweek[flagWeek]}}" bindtap="changeoff">本周</view>
 <view wx:if="flagWeek" class="{{nextweek[flagWeek]}}" bindtap="changeon">下周</view>
 <view class="container" bindtap="toReserve">
-  <view wx:for="{{list}}" id="{{item.id}}" class="{{item.className}}">
+  <view wx:for="{{list}}" wx:key="flagWeek" id="{{item.id}}" class="{{item.className}}">
     {{item.text}}
   </view>
 </view>
