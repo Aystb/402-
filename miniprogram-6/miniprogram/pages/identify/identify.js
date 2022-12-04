@@ -42,7 +42,7 @@ Page({
         (app.globalData.job = this.data.job),
         (app.globalData.id = this.data.id),
         (app.globalData.style =
-          'width: 220rpx; background:linear-gradient(180deg, #A1FFE3 0%, rgba(91,255,169,0.88) 0%, #B7ECFF 131%, #57FFDD 131%);'),
+          'width: 240rpx; background:linear-gradient(180deg, #A1FFE3 0%, rgba(91,255,169,0.88) 0%, #B7ECFF 131%, #57FFDD 131%);'),
         (app.globalData.identification = '已认证');
       },
     });

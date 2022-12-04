@@ -35,7 +35,7 @@ Page({
     wx.request({
       url: 'http://127.0.0.1:8000/users/' + app.globalData.id + '/records',
       method: 'Get',
-      //记得拿回id
+    
       success: (res) => {
         const time = new Date();
         const today = time.getDate();

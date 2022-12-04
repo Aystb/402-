@@ -31,7 +31,8 @@
 }
 
 .identify {
-  font-size: 32rpx;
+  color: #ffffff;
+  font-size: 36rpx;
   grid-row: 10/13;
   grid-column: 8/13;
   border-radius: 50rpx;

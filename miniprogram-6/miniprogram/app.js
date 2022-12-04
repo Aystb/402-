@@ -6,8 +6,13 @@ App({
     group: "",
     job: "",
     id: "123456",
+<<<<<<< Updated upstream
     identification: "点击认证",
     style: "width: 220rpx; background: linear-gradient(180deg, #2EB7F2 0%, #35BAF2 0%, #F0FBFF 131%);",
+=======
+    identification: "前往认证",
+    style: "width: 240rpx; background: linear-gradient(180deg, #2EB7F2 0%, #35BAF2 0%, #F0FBFF 131%);",
+>>>>>>> Stashed changes
    choice:"例会",
     reserveData: "",
     starttime: "",
