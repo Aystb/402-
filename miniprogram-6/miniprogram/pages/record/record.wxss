@@ -46,9 +46,8 @@
   /* 待完成 */
 
   position: absolute;
-  left: 184rpx;
   top: 60rpx;
-  width: 288rpx;
+  width: 654rpx;
   height: 96rpx;
   opacity: 1;
   text-align: center;
@@ -64,9 +63,8 @@
 
 .day {
   position: absolute;
-  left: 132rpx;
   top: 228rpx;
-  width: 400rpx;
+  width: 654rpx;
   height: 72rpx;
   opacity: 1;
   text-align: center;
@@ -82,9 +80,8 @@
 
 .hour {
   position: absolute;
-  left: 126rpx;
   top: 346rpx;
-  width: 408rpx;
+  width: 654rpx;
   height: 72rpx;
   opacity: 1;
   text-align: center;
@@ -102,9 +99,8 @@
   /* 此处为预约理由 123456789000 */
 
   position: absolute;
-  left: 104rpx;
   top: 462rpx;
-  width: 450rpx;
+  width: 654rpx;
   height: 128rpx;
   opacity: 1;
   text-align: center;

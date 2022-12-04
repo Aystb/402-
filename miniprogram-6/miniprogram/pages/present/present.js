@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    img: '../img/组 9.png',
+    img: '../img/free.png',
     //在globalData中接受预约界面的组别并显示在使用中图片下
     group: '',
     using: '空闲',

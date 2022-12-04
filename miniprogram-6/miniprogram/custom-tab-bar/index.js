@@ -3,20 +3,20 @@ Component({
     selected: 2,
     list: [{
         pagePath: "/pages/timetable/timetable",
-        iconPath: "/pages/img/时间表1.svg",
-        selectedIconPath: "../pages/img/时间表.svg",
+        iconPath: "/pages/img/notimetable.svg",
+        selectedIconPath: "../pages/img/timetable.svg",
         className: "functionBarTimetable"
       },
       {
         pagePath: "/pages/present/present",
-        iconPath: "../pages/img/当前1.svg",
-        selectedIconPath: "../pages/img/当前.svg",
+        iconPath: "../pages/img/nopresent.svg",
+        selectedIconPath: "../pages/img/present.svg",
         className: "functionBarPresent"
       },
       {
         pagePath: "/pages/person/person",
-        iconPath: "../pages/img/个人1.svg",
-        selectedIconPath: "../pages/img/个人.svg",
+        iconPath: "../pages/img/noperson.svg",
+        selectedIconPath: "../pages/img/person.svg",
         className: "functionBarPerson"
       }
     ]
