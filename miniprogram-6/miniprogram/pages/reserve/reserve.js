@@ -58,6 +58,21 @@ Page({
     app.globalData.endtime = this.data.endtime,
     app.globalData.text = this.data.text,
     app.globalData.choice = this.data.choice
+    //转换时间格式
+
+let month=this.data.reserveData.slice(0,2);
+let day=this.data.reserveData.slice(3,5);
+let starthour=this.data.starttime.slice(0,2);
+let startminutes=this.data.starttime.slice(3,5);
+let endhour=this.data.endtime.slice(0,2);
+let endminutes=this.data.endtime.slice(3,5);
+let starttime=2023+"-"+month+"-"+day+" "+starthour+":"+startminutes+":"+"00"
+let endtime=2023+"-"+month+"-"+day+" "+endhour+":"+endminutes+":"+"00"
+
+this.setData({
+  starttime: starttime,
+  endtime:endtime,
+})
     //向后端传输预约信息
     wx.request({
       url: 'http://127.0.0.1:8000/api/1.0/users/1/records',

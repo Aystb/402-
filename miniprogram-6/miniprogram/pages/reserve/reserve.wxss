@@ -20,6 +20,13 @@ display: flex;
   font-size: 60rpx;
   justify-content: center;
 }
+.topsecond{
+  position: relative;
+  top: 10rpx;
+  display: flex;
+  font-size: 32rpx;
+  justify-content: center;
+}
 .input{
   position: relative;
   top: 30rpx;
