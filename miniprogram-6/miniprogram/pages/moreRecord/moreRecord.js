@@ -56,7 +56,7 @@ Page({
           const thisYear = thisStartTime.getFullYear();
           var d1 = new Date(time.replace(/\-/g, "\/"));
           var d2 = new Date(thisEndTime.replace(/\-/g, "\/"));
-          if (d1 >= d2 && currentHour >= thisEndHour) {
+          if (d1 > d2 || (d1 == d2 && currentHour >= thisEndHour)) {
             const thisTime = {
               day: thisYear + "-" + thisMonth + "-" + thisDay,
               hour: thisStartHour + ":00-" + thisEndHour + ":00",
