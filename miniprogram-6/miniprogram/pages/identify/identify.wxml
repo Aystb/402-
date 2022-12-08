@@ -1,13 +1,21 @@
-
-
-<view class="contain">
-  <view>请输入姓名</view>
-  <input type="text" class="name" bindinput="username" />
-  <view>请输入密码</view>
-  <input type="text" class="password" bindinput="password" />
-  <view>请输入所属部门</view>
-  <input type="text" class="group" bindinput="group" />
-  <view>请输入所任职务</view>
-  <input type="text" class="job" bindinput="job" />
-  <button class="btn" type="primary" bindtap="submit">提交 </button>
+<view class="top">
+<view class="title">创建并认证用户</view>
 </view>
+<view class="box">
+<view class="contain">
+  <view>请输入姓名:</view>
+  <view>请输入密码:</view>
+  <view>请输入所属部门:</view>
+  <view>请输入所任职务:</view>
+  <view>请输入联系电话:</view>
+</view>
+<view class="contain">
+  <input type="text" class="name" bindinput="username" />
+  <input type="text" class="password" bindinput="password" />
+  <input type="text" class="group" bindinput="group" />
+  <input type="text" class="job" bindinput="job" />
+  <input type="text" class="phone" bindinput="phone" />
+</view>
+
+</view>
+<button class="btn" type="primary" bindtap="submit">提交 </button>

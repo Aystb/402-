@@ -14,6 +14,7 @@ App({
     endtime: "",
     text: "",
     whereiskey:" ",
+    phone:'1111',
   },
   loadFontFace() {
     wx.loadFontFace({
