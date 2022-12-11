@@ -489,15 +489,14 @@ Page({
             if (data.group != app.globalData.group) {
               for (let i = 0; i <= thisEndHour - thisHour - 1; i++) {
                 console.log("thisHour:"+thisHour)
-                const timeNumber = (thisHour + i - 7) * 8 + thisWeekNumber;
+                const timeNumber = (thisHour + i - 15) * 8 + thisWeekNumber;
                 this.setData({
                   ['list[' + timeNumber + '].className']: "otherSelected"
                 })
               }
-              console.log(this.data.list)
             } else {
               for (let i = 0; i <= thisEndHour - thisHour - 1; i++) {
-                const timeNumber = (thisHour + i - 7) * 8 + thisWeekNumber;
+                const timeNumber = (thisHour + i - 15) * 8 + thisWeekNumber;
                 this.setData({
                   ['list[' + timeNumber + '].className']: "onSelected"
                 })
