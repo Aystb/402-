@@ -1,19 +1,12 @@
 // pages/moreRecord/moreRecord.js
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    list: [{
-      day: "2022-12-10",
-      hour: "10:00-11:00",
-      text: "此处为预约理由"
-    }, {
-      day: "2022-12-10",
-      hour: "10:00-11:00",
-      text: "此处为预约理由"
-    }]
+    list: []
 
   },
   loadFontFace() {
@@ -33,34 +26,32 @@ Page({
   },
   Get() {
     wx.request({
-      url: 'http://127.0.0.1:8000/users/' + app.globalData.id + '/records',
+
+      url: 'https://api.room402.temp.ziqiang.net.cn/api/1.0/users/' + app.globalData.id + '/records',
       method: 'Get',
-      //记得拿回id
+
       success: (res) => {
+        console.log(res.data)
         const time = new Date();
         const today = time.getDate();
         const currentMonth = time.getMonth() + 1;
         const currentHour = time.getHours();
         const currentYear = time.getFullYear();
-        console.log(today);
-        console.log(currentMonth);
-        console.log(currentHour);
-        console.log(currentYear);
         for (let data of res.data) {
           const thisStartTime = new Date(data.starttime);
-          const thisEndTime = new Data(data.endtime);
+          // console.log("start:"+thisStartTime);
+          const thisEndTime = new Date(data.endtime);
           const thisMonth = thisStartTime.getMonth() + 1;
           const thisDay = thisStartTime.getDate();
+          // console.log("thisDay:"+thisDay)
           const thisStartHour = thisStartTime.getHours();
           const thisEndHour = thisEndTime.getHours();
           const thisYear = thisStartTime.getFullYear();
-          var d1 = new Date(time.replace(/\-/g, "\/"));
-          var d2 = new Date(thisEndTime.replace(/\-/g, "\/"));
-          if (d1 > d2 || (d1 == d2 && currentHour >= thisEndHour)) {
+          if (thisEndTime<=time) {
             const thisTime = {
               day: thisYear + "-" + thisMonth + "-" + thisDay,
               hour: thisStartHour + ":00-" + thisEndHour + ":00",
-              text: res.data.choice + "\n" + res.data.text
+              text: data.choice + "\n" + data.text
             }
             this.setData({
               list: this.data.list.concat(thisTime)
