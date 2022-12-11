@@ -464,7 +464,7 @@ Page({
 
   Get() {
     wx.request({
-      url: 'https://mock.presstime.cn/mock/638eee12e7aea00081e04914/example/http:/127.0.0.1:8000/users/records',
+      url: 'https://api.room402.temp.ziqiang.net.cn/api/1.0/users/records',
       method: 'GET',
       success: (res) => {
         console.log(res.data);
