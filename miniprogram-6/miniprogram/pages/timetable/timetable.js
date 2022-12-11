@@ -464,10 +464,11 @@ Page({
 
   Get() {
     wx.request({
-      url: 'http://127.0.0.1:8000/users/records',
+      url: 'https://mock.presstime.cn/mock/638eee12e7aea00081e04914/example/http:/127.0.0.1:8000/users/records',
       method: 'GET',
       success: (res) => {
-        const time = new Date();
+        console.log(res.data);
+        const time = new Date;
         const today = time.getDate();
         const currentMonth = time.getMonth() + 1;
         console.log(today);
@@ -478,20 +479,22 @@ Page({
         const lastDay = firstDay + 6;
         for (let data of res.data) {
           const thisTime = new Date(data.starttime);
-          const thisEndTime = new Data(data.endtime);
+          const thisEndTime = new Date(data.endtime);
           const thisMonth = thisTime.getMonth() + 1;
           const thisDay = thisTime.getDate() + (thisMonth - currentMonth) * this.data.months[currentMonth];
-          const thisWeekNumber = thisTime.getDay();
+          const thisWeekNumber = thisTime.getDay()+1;
           if (thisDay >= firstDay && thisDay <= lastDay) {
             const thisHour = thisTime.getHours();
             const thisEndHour = thisEndTime.getHours();
             if (data.group != app.globalData.group) {
               for (let i = 0; i <= thisEndHour - thisHour - 1; i++) {
+                console.log("thisHour:"+thisHour)
                 const timeNumber = (thisHour + i - 7) * 8 + thisWeekNumber;
                 this.setData({
                   ['list[' + timeNumber + '].className']: "otherSelected"
                 })
               }
+              console.log(this.data.list)
             } else {
               for (let i = 0; i <= thisEndHour - thisHour - 1; i++) {
                 const timeNumber = (thisHour + i - 7) * 8 + thisWeekNumber;
