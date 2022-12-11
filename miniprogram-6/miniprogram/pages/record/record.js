@@ -41,12 +41,17 @@ Page({
           // console.log("start:"+thisStartTime);
           const thisEndTime = new Date(data.endtime);
           const thisMonth = thisStartTime.getMonth() + 1;
-          const thisDay = thisStartTime.getDate();
+          let thisDay = thisStartTime.getDate();
           // console.log("thisDay:"+thisDay)
-          const thisStartHour = thisStartTime.getHours();
-          const thisEndHour = thisEndTime.getHours();
+          let thisStartHour = thisStartTime.getHours() - 8;
+          let thisEndHour = thisEndTime.getHours() - 8;
+          if (thisStartHour < 0) {
+            thisDay += 1;
+            thisStartHour += 24;
+            thisEndHour += 24;
+          }
           const thisYear = thisStartTime.getFullYear();
-          if (thisEndTime>time) {
+          if (thisEndTime > time) {
             const thisTime = {
               day: thisYear + "-" + thisMonth + "-" + thisDay,
               hour: thisStartHour + ":00-" + thisEndHour + ":00",
