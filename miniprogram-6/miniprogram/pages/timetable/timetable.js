@@ -464,9 +464,17 @@ Page({
 
   Get() {
     wx.request({
-      url: 'https://api.room402.temp.ziqiang.net.cn/api/1.0/users/records',
+      // url: 'https://api.room402.temp.ziqiang.net.cn/api/1.0/users/records',
+      url: 'https://mock.presstime.cn/mock/638eee12e7aea00081e04914/example/http:/127.0.0.1:8000/users/records',
       method: 'GET',
       success: (res) => {
+        for (let i = 1; i < this.data.list.length; i++) {
+          if (this.data.list[i].className == "otherSelected" || this.data.list[i].className == "onSelected") {
+            this.setData({
+              ['list[' + i + '].className']: "unSelected"
+            })
+          }
+        }
         console.log(res.data);
         const time = new Date;
         const today = time.getDate();
@@ -477,18 +485,19 @@ Page({
         console.log("weekNumber:" + weekNumber);
         const firstDay = today - weekNumber + this.data.flagWeek * 7;
         const lastDay = firstDay + 6;
+        console.log("firstDay:" + firstDay)
         for (let data of res.data) {
           const thisTime = new Date(data.starttime);
           const thisEndTime = new Date(data.endtime);
           const thisMonth = thisTime.getMonth() + 1;
           const thisDay = thisTime.getDate() + (thisMonth - currentMonth) * this.data.months[currentMonth];
-          const thisWeekNumber = thisTime.getDay()+1;
+          const thisWeekNumber = thisTime.getDay() + 1;
           if (thisDay >= firstDay && thisDay <= lastDay) {
             const thisHour = thisTime.getHours();
             const thisEndHour = thisEndTime.getHours();
             if (data.group != app.globalData.group) {
               for (let i = 0; i <= thisEndHour - thisHour - 1; i++) {
-                console.log("thisHour:"+thisHour)
+                console.log("thisHour:" + thisHour)
                 const timeNumber = (thisHour + i - 15) * 8 + thisWeekNumber;
                 this.setData({
                   ['list[' + timeNumber + '].className']: "otherSelected"
@@ -509,13 +518,13 @@ Page({
   },
 
   changeon() {
-    //Get();
+    this.Get();
     this.setData({
       flagWeek: 1,
     })
   },
   changeoff() {
-    //Get();
+    this.Get();
     this.setData({
       flagWeek: 0,
     })
