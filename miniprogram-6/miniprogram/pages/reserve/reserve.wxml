@@ -24,4 +24,4 @@
 
 </view>
 </view>
-<button type="primary" bindtap="submit">提交</button>
+<button  bindtap="submit" class="btn">提交</button>

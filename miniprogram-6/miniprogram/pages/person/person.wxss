@@ -1,5 +1,6 @@
 /* pages/person/person.wxss */
 .top {
+  
   grid-template-columns: [a1] 1fr[a2] 1fr[a3] 1fr[a4]1fr[a5] 1fr[a6] 1fr[a7] 1fr[a8]1fr[a1] 1fr[a2] 1fr[a3] 1fr[a4]1fr[a5] 1fr[a6] 1fr[a7] 1fr[a8];
   grid-template-rows: [a1] 1fr[a2] 1fr[a3] 1fr[a4]1fr[a5] 1fr[a6] 1fr[a7] 1fr[a8]1fr[a1] 1fr[a2] 1fr[a3] 1fr[a4]1fr[a5] 1fr[a6] 1fr[a7] 1fr[a8];
   display: grid;
@@ -24,6 +25,7 @@
 }
 
 .name {
+  font-family: REEJI-FlashItalicGB-Flash-Regular;
   font-size: 75rpx;
   grid-row: 4/10;
   grid-column: 9/max-content;
@@ -31,6 +33,7 @@
 }
 
 .identify {
+  font-family: REEJI-FlashItalicGB-Flash-Regular;
   color: #ffffff;
   font-size: 36rpx;
   grid-row: 10/13;
@@ -60,10 +63,15 @@
   font-size: 70rpx;
   grid-row: 6/10;
   grid-column: 1/max-content;
+  font-family: REEJI-FlashItalicGB-Flash-Regular;
+ display: flex;
+ align-items: center;
 }
 
 .group {
-
+  display: flex;
+ align-items: center;
+  font-family: REEJI-FlashItalicGB-Flash-Regular;
   border-color: #ECECEC;
   border-width: thin;
   border-top-style: solid;
@@ -74,6 +82,7 @@
 }
 
 .groupinput {
+  font-family: REEJI-FlashItalicGB-Flash-Regular;
   font-size: 70rpx;
   border-color: #ECECEC;
   border-width: thin;
@@ -84,6 +93,7 @@
 }
 
 .jobinput {
+  font-family: REEJI-FlashItalicGB-Flash-Regular;
   border-color: #ECECEC;
   border-width: thin;
   border-top-style: solid;
@@ -94,6 +104,7 @@
 }
 
 .record {
+  font-family: REEJI-FlashItalicGB-Flash-Regular;
   color: #576B95;
   font-size: 40rpx;
   grid-row: 11/13;

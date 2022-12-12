@@ -15,16 +15,7 @@ Page({
     password: '123456',
     id: '1',
   },
-  // 认证身份函数,跳转到认证身份页面
-  identify() {
-    wx.navigateTo({ url: '/pages/identify/identify' });
-  },
 
-  //预约记录函数，跳转到预约记录页面
-  record() {
-    wx.navigateTo({ url: '/pages/record/record' });
-  },
-  //载入字体
   loadFontFace() {
     wx.loadFontFace({
       family: 'REEJI-ZhenyanGB-Regular',
@@ -53,10 +44,23 @@ Page({
       }
     });
   },
+
+  // 认证身份函数,跳转到认证身份页面
+  identify() {
+    wx.navigateTo({ url: '/pages/identify/identify' });
+  },
+
+  //预约记录函数，跳转到预约记录页面
+  record() {
+    wx.navigateTo({ url: '/pages/record/record' });
+  },
+ 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad() {},
+  onLoad() {
+    app.loadFontFace()
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

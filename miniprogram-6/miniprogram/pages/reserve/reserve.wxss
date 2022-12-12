@@ -1,5 +1,6 @@
 /* pages/reserve/reserve.wxss */
 .contain{
+  font-family: REEJI-FlashItalicGB-Flash-Regular;
   display: flex;
   justify-content: center;
   justify-content: space-between;
@@ -16,11 +17,13 @@ display: flex;
 
 }
 .top{
+  font-family: REEJI-FlashItalicGB-Flash-Regular;
   display: flex;
   font-size: 60rpx;
   justify-content: center;
 }
 .topsecond{
+  font-family: REEJI-FlashItalicGB-Flash-Regular;
   position: relative;
   top: 10rpx;
   display: flex;
@@ -56,4 +59,9 @@ display: flex;
   left: -200rpx;
  top: 35rpx;
   
+}
+.btn{
+border-radius: 20rpx;
+border: #ECECEC 0.5rpx solid;
+
 }

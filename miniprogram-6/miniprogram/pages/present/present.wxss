@@ -6,13 +6,14 @@
 }
 
 .using {
+  font-family: REEJI-FlashItalicGB-Flash-Regular;
   font-size: 160rpx;
   color: #07C160;
-  font-family: serif;
+  font-weight: normal;
 }
 
 .contain {
-
+  font-family: REEJI-FlashItalicGB-Flash-Regular;
   height: 1000rpx;
   flex-direction: column;
   position: relative;
@@ -26,12 +27,17 @@
 .reserve {
   color: #FFFFFF;
   top: 60rpx;
-  font-size: 90rpx;
-  font-family: cursive;
+  font-size: 75rpx;
+ font-weight: normal;
   background: linear-gradient(180deg, #2EB7F2 0%, #35BAF2 0%, #51C4F4 19%, #76D0F6 45%, #F0FBFF 131%);
   border-radius: 40rpx;
 }
-
+.reserveclick{
+  color: #FFFFFF;
+  
+  font-size: 50rpx;
+ 
+}
 .whereiskey {
 
   align-self: flex-end;
@@ -48,7 +54,8 @@
 }
 
 .cancel {
-  border-radius: 20rpx;
+ 
+  border-radius: 30rpx;
   font-family: serif;
   font-size: 50rpx;
   justify-content: center;
@@ -57,7 +64,7 @@
 }
 
 .confirm {
-  border-radius: 20rpx;
+  border-radius: 30rpx;
   font-family: serif;
   font-size: 50rpx;
   justify-content: center;
@@ -66,7 +73,7 @@
 }
 
 .key {
-  border: black  5rpx;
+  border: black  2rpx;
   border-radius: 30rpx;
   border-style: solid;
   display: flex;
