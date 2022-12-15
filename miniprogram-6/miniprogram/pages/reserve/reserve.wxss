@@ -37,6 +37,8 @@ display: flex;
   height: 60rpx;
   border-bottom:  #ECECEC;
   border-bottom-style: solid; 
+  width: 300rpx;
+  left: -70rpx;
 }
 #contain{
   height: 1040rpx;
@@ -61,7 +63,14 @@ display: flex;
   
 }
 .btn{
-border-radius: 20rpx;
-border: #ECECEC 0.5rpx solid;
-
+  font-family: REEJI-FlashItalicGB-Flash-Regular;
+  position: relative;
+top: 20rpx;
+background-color: white;
+border: #ECECEC 2rpx solid;
+font-size: 50rpx;
+justify-content: center;
+align-items: center;
+display: flex;
+font-weight: normal;
 }

@@ -7,9 +7,9 @@
 
 .using {
   font-family: REEJI-FlashItalicGB-Flash-Regular;
-  font-size: 160rpx;
+  font-size: 150rpx;
   color: #07C160;
-  font-weight: normal;
+font-weight: lighter;
 }
 
 .contain {
@@ -54,16 +54,22 @@
 }
 
 .cancel {
- 
+  font-family: REEJI-FlashItalicGB-Flash-Regular;
   border-radius: 30rpx;
   font-family: serif;
   font-size: 50rpx;
   justify-content: center;
   display: flex;
   align-items: center;
+  background-color: white;
 }
 
 .confirm {
+  /* border-left-color: #ECECEC ;
+  border-left-style: solid;
+  border-right: 2rpx; */
+  background-color: white;
+  font-family: REEJI-FlashItalicGB-Flash-Regular;
   border-radius: 30rpx;
   font-family: serif;
   font-size: 50rpx;
@@ -73,6 +79,7 @@
 }
 
 .key {
+  font-family: REEJI-FlashItalicGB-Flash-Regular;
   border: black  2rpx;
   border-radius: 30rpx;
   border-style: solid;
@@ -86,14 +93,18 @@
   height: 400rpx;
 }
 .keytext{
+  font-family: REEJI-FlashItalicGB-Flash-Regular;
   position: relative;
   font-size: 40rpx;
   top: 50rpx
 }
 .keyinput{
+  font-family: REEJI-FlashItalicGB-Flash-Regular;
   font-size: 60rpx;
   width: 600rpx;
   height: 60rpx;
   border:#ECECEC  5rpx;
   border-bottom-style: solid;
+  position: relative;
+  top: 25rpx;
 }

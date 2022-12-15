@@ -10,7 +10,7 @@
   <view>请输入联系电话:</view>
 </view>
 <view class="contain">
-  <input type="text" class="name" bindinput="username" />
+  <input type="text" class="name" bindinput="username"  />
   <input type="text" class="password" bindinput="password" />
   <input type="text" class="group" bindinput="group" />
   <input type="text" class="job" bindinput="job" />
@@ -18,4 +18,7 @@
 </view>
 
 </view>
+<view style="display: flex;">
+  <navigator class="btn"  open-type="navigateBack" delta="1">取消</navigator>
 <button class="btn"  bindtap="submit">提交 </button>
+</view>

@@ -85,7 +85,34 @@ cancel(){
     //   group: app.globalData.group,
     // })
   },
-
+  loadFontFace() {
+    wx.loadFontFace({
+      family: 'REEJI-ZhenyanGB-Regular',
+      source: 'url("https://raw.githubusercontent.com/Aystb/402-/ttf/RuiZiChaoPaiZhenYan2.0Jian.ttf")',
+      success(res) {
+        console.log(res.status)
+      },
+      fail: function (res) {
+        console.log(res.status)
+      },
+      complete: function (res) {
+        console.log(res.status)
+      }
+    });
+    wx.loadFontFace({
+      family: 'REEJI-FlashItalicGB-Flash-Regular',
+      source: 'url("https://raw.githubusercontent.com/Aystb/402-/ttf/RuiZiChaoPaiChiGuangHei-Shan-ChangGui(REEJI-FlashItalicGB-Flash-Regular)-2.ttf")',
+      success(res) {
+        console.log(res.status)
+      },
+      fail: function (res) {
+        console.log(res.status)
+      },
+      complete: function (res) {
+        console.log(res.status)
+      }
+    });
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

@@ -60,7 +60,7 @@
   border-width: thin;
   border-top-style: solid;
   border-bottom-style: solid;
-  font-size: 70rpx;
+  font-size: 80rpx;
   grid-row: 6/10;
   grid-column: 1/max-content;
   font-family: REEJI-FlashItalicGB-Flash-Regular;
@@ -76,14 +76,14 @@
   border-width: thin;
   border-top-style: solid;
   border-bottom-style: solid;
-  font-size: 70rpx;
+  font-size: 80rpx;
   grid-row: 1/5;
   grid-column: 1/8;
 }
 
 .groupinput {
   font-family: REEJI-FlashItalicGB-Flash-Regular;
-  font-size: 70rpx;
+  font-size: 80rpx;
   border-color: #ECECEC;
   border-width: thin;
   border-top-style: solid;
@@ -98,7 +98,7 @@
   border-width: thin;
   border-top-style: solid;
   border-bottom-style: solid;
-  font-size: 70rpx;
+  font-size: 80rpx;
   grid-row: 6/10;
   grid-column: 8/17;
 }
@@ -109,4 +109,6 @@
   font-size: 40rpx;
   grid-row: 11/13;
   grid-column: 1/6;
+  width: 400rpx;
+  border-bottom: #ECECEC 2rpx solid;
 }

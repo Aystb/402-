@@ -24,4 +24,7 @@
 
 </view>
 </view>
-<button  bindtap="submit" class="btn">提交</button>
+<view style="display: flex;">
+<navigator  class="btn" style="width: 375rpx; height: 120rpx;" open-type="navigateBack" delta="1">取消</navigator>
+<button  bindtap="submit" class="btn" style="width: 375rpx;">提交</button>
+</view>
