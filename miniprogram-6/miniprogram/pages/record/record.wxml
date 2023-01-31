@@ -1,5 +1,6 @@
 <!--预约记录页面pages/record/record.wxml-->
 <text class="moreRecord" bindtap="moreRecord">历史记录</text>
+
 <view class="container">
   <view wx:for="{{list}}" wx:key="list" class="main">
     <view class="header">待完成</view>

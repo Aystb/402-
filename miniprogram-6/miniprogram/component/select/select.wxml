@@ -1,11 +1,21 @@
 <!--component/item/select.wxml-->
 
-<view class='select-box'>
-    <view class='select-con' bindtap='selectTap'>
-        <view class='select-txt'>{{nowText}}</view>
-        <text class="font a-xiangxia1x select-img" animation="{{animationData}}"></text>
-    </view>
-    <view class='select-list' wx:if="{{selectShow}}">
-        <view wx:for="{{selectArray}}" data-index="{{index}}" wx:key='item' class='select-item' bindtap='setText'>{{item.text}}</view>
-    </view>
+<view class="select-box">
+  <view class="select-current" catchtap="openClose">
+    <text class="current-name">{{current.name}}</text>
+  </view>
+  <view class="option-list" wx:if="{{isShow}}" catchtap="optionTap">
+    <text class="option"
+    data-id="{{defaultOption.id}}"
+    data-name="{{defaultOption.name}}">{{defaultOption.name}}
+    </text>
+    <text class="option"
+    wx:for="{{result}}"
+    wx:key="id"
+    data-id="{{item.id}}"
+    data-name="{{item.name}}">{{item.name}}
+    </text>
+  </view>
 </view>
+
+

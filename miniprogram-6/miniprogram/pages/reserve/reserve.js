@@ -9,17 +9,22 @@ Page({
     starttime: '',
     endtime: '',
     text: '',
-    memberTypeArray: [{
+     defaultOptionBusiness:{
+       id:'0',
+       name:'例会'
+     },
+    optionsBusiness:[
+      {
+        city_id: '1',
+        city_name: '活动'
+      }, 
+      {
+        city_id: '2',
+        city_name: '其他'
+      },
+     
+    ],
 
-      "text": "例会"
-    }, {
-
-      "text": "活动"
-    }, {
-
-      "text": "其他"
-    }],
-    choice: "例会",
 
   },
 
@@ -29,6 +34,7 @@ Page({
     this.setData({
       choice: e.detail.text
     })
+    
 
   },
 
@@ -169,4 +175,9 @@ app.loadFontFace()
    * 用户点击右上角分享
    */
   onShareAppMessage() {},
+
+
+
+
+
 });

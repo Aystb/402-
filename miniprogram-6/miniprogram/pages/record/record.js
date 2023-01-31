@@ -23,10 +23,11 @@ Page({
       }
     });
   },
+  
   Get() {
     wx.request({
-
-      url: 'https://api.room402.temp.ziqiang.net.cn/api/1.0/users/' + app.globalData.id + '/records',
+      url:'https:\/\/api\.room402\.temp\.ziqiang\.net\.cn\/api\/1\.0\/users\/records',
+      // url: 'https://api.room402.temp.ziqiang.net.cn/api/1.0/users/' + app.globalData.id + '/records',
       method: 'Get',
 
       success: (res) => {

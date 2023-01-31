@@ -23,6 +23,14 @@
   grid-column: 2/7;
   background-color: #ECECEC;
 }
+.touxiang1 {
+  border-radius: 50%;
+  grid-row: 3/10;
+  grid-column: 2/7;
+  background-color: #ECECEC;
+}
+
+
 
 .name {
   font-family: REEJI-FlashItalicGB-Flash-Regular;

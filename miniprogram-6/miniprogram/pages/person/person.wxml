@@ -2,6 +2,7 @@
 <!-- 头像以及认证界面 -->
 <view class="top">
   <view class="touxiang"></view>
+  <button class="touxiang" bindtap="changetouxiang" style="width: 200rpx;"> </button>
   <view class="name">{{username}}</view>
   <button class="identify" style="{{style}}" bindtap="identify">{{identification}}</button>
 

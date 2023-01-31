@@ -46,15 +46,15 @@ display: flex;
 }
 #topinput{
   position: relative;
-  top: 65rpx;
+  top: 55rpx;
 }
 #secondinput{
   position: relative;
-  top: 60rpx;
+  top: 48rpx;
 }
 #thirdinput{
   position: relative;
-  top: 55rpx;
+  top: 43rpx;
 }
 #select{
   position: relative;

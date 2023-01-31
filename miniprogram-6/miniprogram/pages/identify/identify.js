@@ -18,7 +18,7 @@ Page({
         //向后端传输数据并拿回数据
         //第一次请求创建用户
         wx.request({
-          url: 'https://api.room402.temp.ziqiang.net.cn/api/1.0/users',
+          url: 'http:\/\/127\.0\.0\.1:8000\/api\/1\.0\/users1',
           method: 'POST',
           data: {
             username: this.data.username,
@@ -34,13 +34,11 @@ Page({
               id: res.data.id,
             });},
 
-
-
-
           });
+          console.log(this)
           //第二次请求更改用户详细信息
             wx.request({
-              url: 'https://api.room402.temp.ziqiang.net.cn/api/1.0/users/1/details',
+              url: 'http:\/\/127\.0\.0\.1:8000\/api\/1\.0\/users',
               method: 'POST',
               data: {
                 group: this.data.group,
@@ -53,7 +51,7 @@ Page({
                     phone: res.data.phone,
                     group: res.data.group,
                     job: res.data.job,
-                  })
+                  });
                   (app.globalData.username = this.data.username),
                   (app.globalData.password = this.data.password),
                   (app.globalData.group = this.data.group),

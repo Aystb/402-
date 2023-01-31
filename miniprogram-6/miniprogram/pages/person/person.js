@@ -44,6 +44,12 @@ Page({
       }
     });
   },
+//更换头像函数
+changetouxiang (){
+console.log("ready to change")
+
+},
+
 
   // 认证身份函数,跳转到认证身份页面
   identify() {

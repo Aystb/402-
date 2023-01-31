@@ -37,16 +37,24 @@ this.setData({
 
 
 },
-
+//修改钥匙在哪里
 confirm(){
-//此处的请求在api完成后再写
-
+wx.request({
+  url: 'https:\/\/api\.room402\.temp\.ziqiang\.net\.cn\/api\/1.0\/whereiskey',
+  method: 'POST',
+  data: {
+    whereiskey:this.data.whereiskey,
+  },
+  success: (res) => {
+    console.log(res);
+  },
+})
 app.globalData.whereiskey=this.data.whereiskey;
+//点击以后隐藏的实现
 this.setData({
   key:true,
   antikey:false,
 })
-
 },
 
 cancel(){
